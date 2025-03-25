@@ -1,0 +1,10 @@
+@import '../../../node_modules/mini.css/dist/mini-default.css';
+
+form {
+  min-width: 300px;
+}
+
+.error {
+  color: red;
+  font-weight: 600;
+}
