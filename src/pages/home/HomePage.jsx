@@ -1,13 +1,8 @@
-import IconsPage from './IconsPage';
-
 const HomePage = () => {
   return (
-    <>
-      <h1>
-        HomePage
-      </h1>
-      <IconsPage />
-    </>
+    <h1>
+      HomePage
+    </h1>
   );
 };
 

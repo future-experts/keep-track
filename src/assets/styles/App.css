@@ -1,10 +1,35 @@
 @import '../../../node_modules/mini.css/dist/mini-default.css';
 
+header {
+  background-color: white;
+  height: 5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.logo {
+  margin: 0 1rem;
+}
+
 form {
   min-width: 300px;
 }
 
 .error {
-  color: red;
-  font-weight: 600;
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  border: 2px solid red;
+  width: 300px;
+  height: 300px !important;
+  margin: 240px auto;
+}
+
+.center-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-size: 2.5rem;
 }

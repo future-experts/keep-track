@@ -1,9 +1,14 @@
 import './assets/styles/App.css';
-import ProjectsPage from './pages/projects/ProjectsPage';
+import { BrowserRouter } from 'react-router';
+import Navigator from './components/Navigator';
+import Router from './components/Router';
 
 function App() {
   return (
-    <ProjectsPage />
+    <BrowserRouter>
+      <Navigator />
+      <Router />
+    </BrowserRouter>
   );
 }
 
