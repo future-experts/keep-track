@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { Link } from 'react-router';
 
 const ProjectCard = ({ project, onSelect }) => {
 
@@ -8,7 +9,7 @@ const ProjectCard = ({ project, onSelect }) => {
     <div className='card'>
       <img src={`/thumbs/${project.imageUrl}.webp`} alt={project.name} />
       <div className='section dark'>
-      <h3>{project.name}</h3>
+      <h3><Link to={`/projects/${project.id}`}>{project.name}</Link></h3>
       <p>{project.description}</p>
       <p>Signed on: {dayjs(project.contractSignedOn).format('DD. MMMM YYYY.')}</p>
       <p>Budget: $ {project.budget.toLocaleString()}</p>
