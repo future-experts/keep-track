@@ -4,6 +4,7 @@ import Navigator from './components/Navigator';
 import Router from './components/Router';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Navigator />

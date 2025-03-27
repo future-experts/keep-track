@@ -33,3 +33,29 @@ form {
   height: 90vh;
   font-size: 2.5rem;
 }
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-green {
+  filter: invert(71%) sepia(53%) saturate(6591%) hue-rotate(83deg) brightness(126%) contrast(124%);
+}
+
+.filter-red {
+  filter: invert(15%) sepia(100%) saturate(6822%) hue-rotate(3deg) brightness(102%) contrast(116%);
+}
+
+.filter-blue {
+  filter: invert(9%) sepia(100%) saturate(6644%) hue-rotate(247deg) brightness(94%) contrast(145%);
+}
+
+.normal {
+  filter:invert(0%)
+}
+
+.inverted {
+  filter:invert(100%)
+}

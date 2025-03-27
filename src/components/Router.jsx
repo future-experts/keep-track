@@ -3,9 +3,10 @@ import ProjectPage from '@projects/ProjectPage';
 import HomePage from '@home/HomePage';
 import LoginPage from '@auth/LoginPage';
 import PrivateRoute from './PrivateRoute';
-import { Routes, Route } from 'react-router';
+import { Routes, Route, useLocation } from 'react-router';
 
 function Router() {
+  const location = useLocation();
   return (
     <div className='container'>
       <Routes>
