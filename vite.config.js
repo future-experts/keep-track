@@ -10,9 +10,10 @@ export default defineConfig({
       "@styles": "/src/assets/styles",
       "@images": "/src/assets/images",
       "@components": "/src/components",
+      "@pages": "/src/pages",
       "@projects": "/src/pages/projects",
       "@home": "/src/pages/home",
-      "@auth": "/src/pages/auth",
+      "@auth": "/src/pages/auth"
     }
   },
   server:{

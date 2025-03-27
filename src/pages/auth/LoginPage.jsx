@@ -5,7 +5,8 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
 
-  const login = () => {
+  const login = event => {
+    event.preventDefault();
     localStorage.setItem('keep user', 'John Doe');
     navigate('/home');
   }
