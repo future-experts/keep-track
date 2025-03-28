@@ -1,23 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router";
+import { useSelector, useDispatch } from 'react-redux';
 import ProjectDetails from "./ProjectDetails";
-import { getProject } from "./projectAPI";
+import { fetchProject } from "@store/projectSlice";
 
 const ProjectPage = () => {
 
+  const dispatch = useDispatch();
   const projectId = parseInt(useParams().id);
-  const [project, setProject] = useState(null);
+  const { details, loading, error } = useSelector(state => state.project);
 
   useEffect(() => {
-    const fetchProject = async () => {
-      const data = await getProject(projectId);
-      setProject(data);
-    }
-    fetchProject();
+    dispatch(fetchProject(projectId));
   }, [projectId]);
 
   return (
-    <ProjectDetails project={project} />
+    <>
+      {loading && (
+        <div className='center-page'>
+          <span className='spinner primary' />
+          <p>Loading...</p>
+        </div>
+      )}
+
+      {!!error && (
+        <div className='center-page error'>
+          <span className='icon-alert inverse' />
+          <span className='err-message'>{error}</span>
+        </div>
+      )}
+
+      {!!details && <ProjectDetails project={details} />}
+    </>
+    
   );
 };
 

@@ -19,7 +19,7 @@ const ProjectDetails = ({ project }) => {
             />
             <section className="section dark">
               <p>{project.description}</p>
-              <p>Budget : $ {project.budget.toLocaleString()}</p>
+              <p>Budget : $ {project.budget}</p>
               <p>Signed: {dayjs(project.contractSignedOn).format("MMMM DD, YYYY.")}</p>
             </section>
           </div>

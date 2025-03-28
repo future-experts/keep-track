@@ -1,19 +1,17 @@
-import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { login } from "@store/userSlice";
 
 const LoginPage = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const login = event => {
+  const handleLogin = event => {
     event.preventDefault();
-    localStorage.setItem('keep user', 'John Doe');
+    dispatch(login({ id: 1, name: 'John Doe', token: '123456' }));
     navigate('/home');
   }
-
-  useEffect(() => {
-    localStorage.removeItem('keep user');
-  }, []);
 
   return (
     <div className='center-page'>
@@ -23,12 +21,12 @@ const LoginPage = () => {
         </div>
         <hr />
         <div className='section'>
-          <form className='input-group vertical' style={{ width: '300px', margin: '0 auto'}}>
+          <form className='input-group vertical' style={{ width: '300px', margin: '0 auto' }}>
             <label htmlFor="username">Username</label>
             <input type="text" id="username" name="username" autoFocus />
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
-            <button className='button primary' onClick={login}>Log in</button>
+            <button className='button primary' onClick={handleLogin}>Log in</button>
           </form>
         </div>
       </div>

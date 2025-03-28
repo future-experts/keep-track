@@ -11,7 +11,6 @@ const ProjectForm = ({ project: initialProject, onCancel, onSubmit }) => {
     err.name = !project.name ? 'name is required' : '';
     err.desc = !project.desc ? 'description is required' : '';
     err.budget = !project.budget ? 'budget is required' : '';
-    console.log(err)
     setError(err);
   }
 

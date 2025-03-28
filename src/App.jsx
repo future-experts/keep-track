@@ -1,4 +1,3 @@
-import './assets/styles/App.css';
 import { BrowserRouter } from 'react-router';
 import Navigator from './components/Navigator';
 import Router from './components/Router';

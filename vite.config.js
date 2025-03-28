@@ -13,7 +13,8 @@ export default defineConfig({
       "@pages": "/src/pages",
       "@projects": "/src/pages/projects",
       "@home": "/src/pages/home",
-      "@auth": "/src/pages/auth"
+      "@auth": "/src/pages/auth",
+      "@store": "/src/store"
     }
   },
   server:{

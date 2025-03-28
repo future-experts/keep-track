@@ -1,41 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import ProjectsList from "./ProjectsList";
-import { getProjects, updateProject } from './projectAPI';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProjects } from '@store/projectsSlice';
 
 const ProjectsPage = () => {
 
-  const [loading, setLoading] = useState(false);
-  const [projects, setProjects] = useState([]);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+  const { items, loading, error } = useSelector(state => state.projects);
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      setLoading(true);
-      try {
-        const data = await getProjects();
-        setProjects(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchProjects();
+    dispatch(fetchProjects());
   }, []);
-
-  const updateProjects = async project => {
-    setLoading(true);
-    try {
-      let updProject = await updateProject(project);
-       let updatedProjects = projects.map(
-        p => { return p.id === updProject.id ? updProject : p; });
-      setProjects(updatedProjects);        
-    } catch (error) {
-      setError(error.message);      
-    } finally {
-      setLoading(false);
-    }
-  }
 
   return (
     <>
@@ -51,7 +26,7 @@ const ProjectsPage = () => {
           <span className='err-message'>{error}</span>
         </div>
       )}
-      <ProjectsList projects={projects} onSave={updateProjects} />
+      {items && items.length && <ProjectsList projects={items} />}
     </>
   );
 };

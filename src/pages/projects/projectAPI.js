@@ -12,6 +12,7 @@ const request = axios.create({
 
 export const getProjects = async () => {
   const response = await request.get(`projects?_page=1&_limit=12`);
+  console.log(response.data);
   return response.data;
 }
 
